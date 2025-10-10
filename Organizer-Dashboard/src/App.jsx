@@ -10,16 +10,24 @@
 
 
 import { useState } from 'react'
-import Sidebar from "./components/sidebar"
+import Sidebar from "./components/Sidebar"
+import Widget from "./components/Widget"
+import ContentArea from "./components/ContentArea"
+import Todo from './components/widget/TodoList/TodoList'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="p-5 flex justify-between h-screen">
+    <div className="p-5 w-full flex justify-between h-screen gap-10">
       <Sidebar />
-      <div className="w-4/5">big area</div>
+      <ContentArea>
+        {/* <Widget rowLength={3} colLength={2}> */}
+        <Todo />
+        {/* </Widget> */}
+        {/* <Widget rowLength={1} colLength={1} /> */}
+     
+      </ContentArea>
     </div>
   )
 }
